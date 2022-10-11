@@ -70,6 +70,26 @@ myForm.addEventListener('submit',onSubmit);
 
 // Store to local storage
 
+// function onSubmit(e) {
+//     e.preventDefault();
+
+//     if(nameInput.value ==='' || emailInput.value ===''){
+//         msg.classList.add('error');
+//         msg.innerHTML='Please enter all fields.';
+//         setTimeout(() => msg.remove(),3000 ); 
+            
+//     }
+//     else {
+       
+//         localStorage.setItem(nameInput.value,emailInput.value);
+
+
+//    nameInput.value = '';
+//    emailInput.value ='';
+// }
+
+// Storing as an object
+
 function onSubmit(e) {
     e.preventDefault();
 
@@ -80,7 +100,12 @@ function onSubmit(e) {
             
     }
     else {
-        localStorage.setItem(nameInput.value,emailInput.value);
+       let obj= {
+        name :nameInput.value,
+        email :emailInput.value
+       } 
+       let objSerialized = JSON.stringify(obj);
+        localStorage.setItem('userdetails',objSerialized);
 
 
    nameInput.value = '';
@@ -88,3 +113,14 @@ function onSubmit(e) {
 }
 
 }
+
+// let obj = {
+//     name : 'Lalith',
+//     age : 28
+// }
+// let objSerialized = JSON.stringify(obj);
+// localStorage.setItem('myobj',objSerialized);
+// let objDeserialized = JSON.parse(objSerialized);
+// console.log(obj);
+// console.log(objSerialized);
+// console.log(objDeserialized);
