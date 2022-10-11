@@ -68,6 +68,7 @@ myForm.addEventListener('submit',onSubmit);
 // }
 
 
+// Store to local storage
 
 function onSubmit(e) {
     e.preventDefault();
